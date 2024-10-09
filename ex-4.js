@@ -8,9 +8,16 @@ const todos = [
 
 function getCompletedTodo(todos) {
   // Start coding here
+  return todos
+    .filter(function (todo) {
+      return todo.completed === true;
+    })
+    .map(function (todo) {
+      return { topic: todo.topic, completed: todo.completed };
+    });
 }
 
-getCompletedTodo(todos);
+console.log(getCompletedTodo(todos));
 
 /* 
 	Output:
